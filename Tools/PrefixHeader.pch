@@ -1,0 +1,66 @@
+//
+//  PrefixHeader.pch
+//  Tools
+//
+//  Created by apple on 17/3/15.
+//  Copyright © 2017年 KXX. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 0.自定义Log
+#ifdef DEBUG
+#define KXLog(...) NSLog(__VA_ARGS__)
+#else
+#define KXLog(...)
+#endif
+
+// 1.主请求路径
+////正常网址
+//#define KXMainURL    @"http://jjonline.51phpweb.cn/api.php?"
+//#define KXMainURLImg @"http://jjonline.51phpweb.cn/"
+//#define KXMainURLPay @"http://payonline.51phpweb.cn/"
+//-------------------------------------------------------------
+//测试网址
+#define KXMainURL @""
+#define KXMainURLImg @""
+#define KXMainURLPay @""
+//-------------------------------------------------------------
+#define KX_NO_NETWORK @"哦，似乎网络开小差了~,请检查网络连接！"
+#define KX_DONT_HAVE_ANYMORE_REFRESH @"没有更多内容了！"
+/** TabBarButton被重复点击的通知 */
+#define  KXTabBarButtonDidRepeatClickNotification @"KXTabBarButtonDidRepeatClickNotification"
+
+/** TitleButton被重复点击的通知 */
+#define  KXTitleButtonDidRepeatClickNotification @"KXTitleButtonDidRepeatClickNotification"
+//2. 颜色
+#define KXColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+//3. 全局色
+#define KXGlobalColor KXColor(229, 229, 229)
+
+//4. 屏幕宽 高
+/***********屏幕适配*************/
+#define KXScreenW [UIScreen mainScreen].bounds.size.width
+#define KXScreenH [UIScreen mainScreen].bounds.size.height
+#define iphone6P (KXScreenH == 736)
+#define iphone6 (KXScreenH == 667)
+#define iphone5 (KXScreenH == 568)
+#define iphone4 (KXScreenH == 480)
+/***********屏幕适配*************/
+
+//5.
+/** UITabBar的高度 */
+#define KXTabBarH 49
+
+/** 导航栏的最大Y值 */
+#define KXNavMaxY 64
+
+/** 标题栏的高度 */
+#define  KXTitlesViewH  35
+// 6.判断是否为iOS7
+#define SYSTEM_VERSION [[UIDevice currentDevice].systemVersion floatValue] //系统版本
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+
+#endif /* PrefixHeader_pch */
